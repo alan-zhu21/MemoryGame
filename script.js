@@ -40,7 +40,7 @@ function shuffle(array) {
 
 let shuffledColors = shuffle(COLORS);
 let numCardsFlipped = 0;
-const flippedCards =[];
+const flippedCards = [];
 const allMatchedColors = [];
 
 // this function loops over the array of colors
@@ -106,26 +106,26 @@ function handleCardClick(event) {
   }
 }
 
-// // when the DOM loads
-// startBtn.addEventListener('click', function(event) {
-//   console.dir(event);
-//   if (startBtn.isGameOnDisplay !== true) {
-//     createDivsForColors(shuffledColors);
-//     startBtn.isGameOnDisplay = true;
-//     startBtn.isGameComplete = true;
-//   }
-// });
+// when the DOM loads
+startBtn.addEventListener('click', function (event) {
+  console.dir(event);
+  if (startBtn.isGameOnDisplay !== true) {
+    createDivsForColors(shuffledColors);
+    startBtn.isGameOnDisplay = true;
+    startBtn.isGameComplete = true;
+  }
+});
 
-// restartBtn.addEventListener('click', function (event) {
-//   console.dir(event);
-//   for (let matchedColor in allMatchedColors) {
-//     if (!COLORS.includes(matchedColor)) {
-//       startBtn.isGameComplete = false;
-//     }
-//   }
-//   if (startBtn.isGameComplete === true && startBtn.isGameOnDisplay === true) {
-//     gameContainer.innerHTML = '';
-//     shuffle(COLORS);
-//     createDivsForColors(shuffledColors);
-//   }
-// })
+restartBtn.addEventListener('click', function (event) {
+  console.dir(event);
+  for (let matchedColor in allMatchedColors) {
+    if (!COLORS.includes(matchedColor)) {
+      startBtn.isGameComplete = false;
+    }
+  }
+  if (startBtn.isGameComplete === true && startBtn.isGameOnDisplay === true) {
+    gameContainer.innerHTML = '';
+    shuffle(COLORS);
+    createDivsForColors(shuffledColors);
+  }
+})
